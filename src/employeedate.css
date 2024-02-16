@@ -1,0 +1,28 @@
+.employee-date{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    margin:1rem 0;
+    font-size: 15px;
+    background-color:black;
+    border-radius: 12px;
+    color: white;
+    
+
+}
+.employee-date_month{
+    display:flex;
+    font-size: 10px;
+    padding-left:15px;
+}
+.employee-date_year{
+    display:flex;
+    font-size: 10px;
+    padding-left: 15px;
+}
+.employee-date_day{
+    display:flex;
+    font-size: 10px;
+    padding-left: 15px;
+}

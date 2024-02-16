@@ -1,0 +1,24 @@
+.Emp-details{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.25rem;
+    margin:1rem 0;
+    font-size: 15px;
+    background-color:palevioletred;
+    border-radius: 12px;
+    width: 45rem;
+    box-shadow: 0 2px 4px aqua;
+    
+    
+    
+}
+.Emp-details-doj{
+    font-size: 5px;
+    padding-left:15px;
+}
+
+.Emp-details-exp{
+    
+    padding-right:15px;
+}

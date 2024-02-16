@@ -1,0 +1,24 @@
+.Emps {
+    background-color:lightslategray;
+    padding: 0.8rem;
+    width: 50rem;
+    margin-bottom: 1rem;
+    color: white; 
+    text-align: center; 
+    border-radius: 5px;
+    max-width: 95%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    margin: 25px 50px 75px 240px;
+    
+}
+.Emps:hover {
+    background-color:#333; 
+}
+
+body, html {
+    background-color: lightgray; 
+    margin: 1px; 
+    padding: 0; 
+
+}

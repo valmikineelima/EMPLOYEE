@@ -1,0 +1,10 @@
+.emp-list{
+    list-style: none;
+    padding: 0;
+
+}
+.emp-list__fallback{
+    color:white;
+    text-align: center;
+    
+}
