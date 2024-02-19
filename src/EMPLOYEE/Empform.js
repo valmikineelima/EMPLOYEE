@@ -2,6 +2,7 @@ import './Empform.css';
 import React,{useState,useContext} from 'react';
 import { EmpContext } from './emp-context';
 import { useDispatch } from 'react-redux';
+import { empActions } from '../Store';
 const Empform =(props)=>{
 
     //const {onSaveempData}=useContext(EmpContext);
@@ -33,7 +34,8 @@ const Empform =(props)=>{
         //console.log(empData);
         //props.onSaveempData(empData);
         //onSaveempData(empData);
-        dispatch({type:"ADD_EMP",payload:empData});
+        //dispatch({type:"ADD_EMP",payload:empData});
+        dispatch(empActions.addemp(empData));
 
         setEnteredemp_name('');
         setEnteredDOB('');

@@ -1,4 +1,5 @@
 import {createStore} from 'redux';
+import { createSlice,configureStore}from '@reduxjs/toolkit';
 
 const  DUMP_emp= [
     {id:'1', emp_name :'valmiki', exp: 2, DOB: new Date(2022,11,11)},
@@ -7,23 +8,49 @@ const  DUMP_emp= [
     {id:'4', emp_name :'madhu', exp: 19, DOB: new Date(2024,12,6)},
     {id:'5', emp_name :'bujji', exp: 11, DOB: new Date(2021,1,27)},
 ]
+const initialState = {items:DUMP_emp}
+const empSlice = createSlice({
+    name:'emp',
+    initialState: initialState,
+    reducers:{
+        addemp(state,action){
+            const empData={
+                ...action.payload,
+                id:Math.random().toString()
+            };
+            state.items.push(empData)
+            
 
-const empReducer =(state ={items: DUMP_emp},action)=>{
-    const updateemp=[...state.items]
-    if(action.type === 'ADD_EMP'){
-        const empData={
-            ...action.payload,
-            id:Math.random().toString()
-        };
-        updateemp.push(empData)
-        return {items: updateemp}
+        },
+        removeemp(state,action){
+
+        }
     }
-    if(action.type === 'REMOVE_EMP'){
-        //logic to remove emp
+
+});
+export const sendempData=(empData)=>{
+    return async(dispatch)=>{
+     const sendRequest =async () =>{
+        const response =await fetch('https://triconinfotech-39de6-default-rtdb.firebaseio.com/Employee.json',{
+            method:'put',
+            body:JSON.stringify(empData),
+            });
+            if(!response.ok){
+                throw new Error("sending expense data failed");
+            }
+     };
+     try{
+        await sendRequest()
+     }catch(error){
+        console.log(error);
+     }
     }
-    return state;
-    
 }
-const empStore=createStore(empReducer);
+
+const empStore = configureStore({
+    reducer:empSlice.reducer
+
+});
 
 export default empStore;
+export const empActions =empSlice.actions;
